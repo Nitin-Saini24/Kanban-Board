@@ -1,0 +1,168 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+  font-family: "Courier New", Courier, monospace;
+}
+
+body {
+  background-color: #232eb1;
+  color: white;
+  width: 100vw;
+}
+header h1 {
+  text-align: center;
+  margin: 20px;
+  font-size: 5rem;
+}
+.container {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: space-around;
+}
+
+.column {
+  text-align: center;
+  width: 30rem;
+  height: 50rem;
+  font-size: 3rem;
+  border: 2px solid white;
+  border-radius: 20px;
+}
+.column p {
+  background-color: tomato;
+  height: 7rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  box-sizing: border-box;
+}
+.task {
+  font-size: 1.5rem;
+  border: 2px solid red;
+  padding: 5px;
+  margin: 10px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+}
+.task .backlog_head {
+  display: flex;
+  font-size: 2rem;
+  align-items: start;
+  justify-content: space-between;
+}
+
+.task .backlog_content {
+  display: flex;
+  text-align: start;
+  justify-content: space-between;
+}
+/* .task button {
+  position: relative;
+  width: 20px;
+} */
+
+.delete_task {
+  display: flex;
+  align-self: flex-end;
+  /* align-items: center; */
+  /* justify-content: center; */
+}
+
+.edit_task {
+  display: flex;
+  align-self: flex-end;
+}
+
+.add {
+  position: relative;
+  width: 30px;
+  height: 20px;
+  margin: 10px;
+  left: 40px;
+  font-size: 1.5rem;
+  background-color: transparent;
+  border: 2px solid red;
+  border-radius: 20px;
+}
+
+.modal {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  position: absolute;
+  width: 40rem;
+  height: 25rem;
+  background-color: #234a23;
+  border-radius: 5px;
+}
+.heading h1 {
+  display: inline-block;
+  margin: 5px;
+  font-size: 2.5rem;
+}
+.heading button {
+  font-size: 3rem;
+  position: absolute;
+  width: fit-content;
+  height: fit-content;
+  right: 8px;
+  background-color: transparent;
+  border: transparent;
+  color: white;
+}
+
+button:hover {
+  cursor: pointer;
+  color: red;
+}
+
+input {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 2px;
+  padding-left: 10px;
+  width: 35rem;
+  height: 4rem;
+  border-radius: 5px;
+  outline: none;
+  border: 2px solid black;
+}
+label {
+  display: inline-block;
+  width: 30rem;
+  padding-left: 5px;
+  padding-top: 5px;
+  font-size: 2rem;
+}
+.sub {
+  display: inline-block;
+  width: 35rem;
+  font-size: 2rem;
+  margin: 10px 2px 2px 2px;
+  height: 4rem;
+  border-radius: 5px;
+}
+
+.active {
+  display: none;
+}
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(3px);
+  z-index: 5;
+}
