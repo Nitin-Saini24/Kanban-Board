@@ -35,9 +35,14 @@
       <div class="column backlog">
         <p>backlog <button class="add">+</button></p>
         <div class="task" draggable="true">
-          <div class="backlog_head">Heading:</div>
-          <div class="backlog_content">content content</div>
-          <!-- <button type="button">&times;</button> -->
+          <div class="backlog_head">
+            <span>Heading:</span>
+            <button type="button" class="edit_task">🖌️</button>
+          </div>
+          <div class="backlog_content">
+            <span> content content</span>
+            <button type="button" class="delete_task">❌</button>
+          </div>
         </div>
       </div>
       <div class="column to-do">

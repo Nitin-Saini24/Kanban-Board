@@ -57,16 +57,30 @@ header h1 {
   display: flex;
   font-size: 2rem;
   align-items: start;
+  justify-content: space-between;
 }
 
 .task .backlog_content {
   display: flex;
   text-align: start;
+  justify-content: space-between;
 }
 /* .task button {
   position: relative;
   width: 20px;
 } */
+
+.delete_task {
+  display: flex;
+  align-self: flex-end;
+  /* align-items: center; */
+  /* justify-content: center; */
+}
+
+.edit_task {
+  display: flex;
+  align-self: flex-end;
+}
 
 .add {
   position: relative;
