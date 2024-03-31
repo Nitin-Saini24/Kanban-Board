@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Kanban Board</title>
+  </head>
+  <body>
+    <!-- Main Heading  -->
+    <header class="kanban"><h1>kanban Board</h1></header>
+
+    <!-- main -->
+    <div class="container">
+      <!--TO add new backlog modal -->
+      <div class="modal active">
+        <div class="heading">
+          <h1>heading</h1>
+          <button class="closeModal" type="button">&times;</button>
+        </div>
+        <form>
+          <label for="Backlog-Heading">New backlog</label>
+          <input type="text" id="Backlog-Heading" placeholder="type a log..." />
+          <label for="backlog-Details">Details</label>
+          <input
+            type="text"
+            id="backlog-Details"
+            placeholder="write about log..."
+          />
+          <button class="sub" type="button">Add</button>
+        </form>
+      </div>
+
+      <!-- main kanban board -->
+      <div class="column backlog">
+        <p>backlog <button class="add">+</button></p>
+        <div class="task" draggable="true">
+          <div class="backlog_head">Heading:</div>
+          <div class="backlog_content">content content</div>
+          <!-- <button type="button">&times;</button> -->
+        </div>
+      </div>
+      <div class="column to-do">
+        <p>to do</p>
+      </div>
+      <div class="column review">
+        <p>review</p>
+      </div>
+      <div class="column done">
+        <p>done</p>
+      </div>
+    </div>
+    <div class="overlay active"></div>
+    <script src="index.js"></script>
+  </body>
+</html>
