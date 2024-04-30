@@ -1,8 +1,7 @@
 "use strict";
-
 ////////////////////////////////////////////////////////////////////////////////////////////////
 
-const dropable = document.querySelectorAll(".column");
+const dropable = document.querySelectorAll(".card");
 const backlog = document.querySelector(".backlog");
 const draggable = document.querySelectorAll(".task");
 const add = document.querySelector(".add");
@@ -15,11 +14,13 @@ const backlog_head = document.querySelector(".backlog_head");
 const backlog_content = document.querySelector(".backlog_content");
 const task = document.querySelector(".task");
 
+console.log(dropable);
 // const nitin = [];
 
 let newTask;
 
 const openModal = function () {
+  console.log("nitin");
   modal.classList.remove("active");
 };
 
@@ -27,7 +28,7 @@ const close = function () {
   modal.classList.add("active");
 };
 
-closeModal.addEventListener("click", close);
+// closeModal.addEventListener("click", close);
 
 document.addEventListener("keydown", function (e) {
   if (e.key === "Escape" && !modal.classList.contains("active")) {
@@ -41,32 +42,36 @@ document.addEventListener("keydown", function (e) {
 // };
 
 draggable.forEach((task) => {
+  // console.log(task);
   task.addEventListener("dragstart", dragStart);
-  task.addEventListener("dragend", dragEnd);
+  // task.addEventListener("dragend", dragEnd);
 });
 
 add.addEventListener("click", openModal);
 
 dropable.forEach((section) => {
+  console.log(section);
   section.addEventListener("dragover", dragOver);
   section.addEventListener("drop", dragDrop);
 });
 
 function dragStart() {
   newTask = this;
+  // console.log(newTask);
 }
-function dragEnd() {
-  newTask = null;
-  console.log(newTask);
-}
+// function dragEnd() {
+//   // newTask = null;
+//   // console.log(newTask);
+// }
 
 function dragOver(e) {
+  // console.log("nitin");
   e.preventDefault();
 }
 
 function dragDrop(e) {
   e.preventDefault();
-  if (e.target.classList.contains("column")) {
+  if (e.target.classList.contains("card-body")) {
     e.target.appendChild(newTask);
   }
   // addButton();
@@ -131,9 +136,13 @@ const createLog = function () {
 
   edit_task.textContent = "🖌️";
   edit_task.classList.add("edit_task");
+  edit_task.classList.add("btn");
+  edit_task.classList.add("btn-primary");
 
   delete_task.textContent = "❌";
   delete_task.classList.add("delete_task");
+  delete_task.classList.add("btn");
+  delete_task.classList.add("btn-secondary");
 
   task_div.appendChild(head_div);
   task_div.appendChild(about_div);
@@ -144,7 +153,7 @@ const createLog = function () {
   backlog.appendChild(task_div);
 
   task_div.addEventListener("dragstart", dragStart);
-  task_div.addEventListener("dragend", dragEnd);
+  // task_div.addEventListener("dragend", dragEnd);
 
   console.log(task_div);
   close();
