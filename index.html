@@ -13,101 +13,185 @@
     <title>Kanban Board</title>
   </head>
 
-  <body class= "container-fluid pt-3">
-<!-- Main Heading -->
- <header class="container">
+  <body class="container-fluid pt-3">
+    <!-- Main Heading -->
+    <header class="container">
       <h1 class="font-weight-light text-white text-center">Kanban Board</h1>
-    </header> 
-<!-- Main -->
- <main >
-<!-- Modal to add new backlog -->
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h2 class="modal-title text-primary" id="exampleModalLabel">New backlog</h2>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-        <form class="modal-body">
-          <div class="mb-3">
-            <label for="Backlog-Heading" class="form-label text-primary">Heading</label>
-            <input
-              type="text"
-              class="form-control form-nk"
-              id="Backlog-Heading"
-              placeholder="Type a log..."
-            />
-          </div>
-          <div class="mb-3">
-            <label for="backlog-Details" class="form-label text-primary">Details</label>
-            <input
-              type="text"
-              class="form-control form-nk"
-              id="backlog-Details"
-              placeholder="Write about log..."
-            />
-          </div>
-          <div class="modal-footer">
-          <button class="btn btn-primary sub" type="button">Add</button>
-        </div>
-        </form>
-      </div>
-      </div>
-      </div> 
-
-<!-- Main kanban board -->
-<div class="row flex-row flex-sm-nowrap py-3">
-      <div class="col-sm-4 col-md-4 col-xl-3">
-        <div class="card bg-light">
-          <div class="card-body backlog">
-          <p class="h3 text-center text-primary">
-            Backlog <button class=" add btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">+</button>
-          </p>
-          <div class="task col" draggable="true">
-            <div class="backlog_head">
-              <span>Heading:</span>
-              <button type="button" class="edit_task btn btn-primary btn-md">
-                🖌️
-              </button>
+    </header>
+    <!-- Main -->
+    <main>
+      <!-- Modal to add new backlog -->
+      <div
+        class="modal fade modal-1"
+        id="exampleModal-1"
+        tabindex="-1"
+        aria-labelledby="exampleModalLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h2 class="modal-title text-primary" id="exampleModalLabel">
+                New backlog
+              </h2>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
             </div>
-            <div class="backlog_content">
-              <span>Content content</span>
-              <button type="button" class="delete_task btn btn-secondary">
-                ❌
-              </button>
+            <form class="modal-body">
+              <div class="mb-3">
+                <label for="Backlog-Heading" class="form-label text-primary"
+                  >Heading</label
+                >
+                <input
+                  type="text"
+                  class="form-control form-nk-1"
+                  id="Backlog-Heading"
+                  placeholder="Type a log..."
+                />
+              </div>
+              <div class="mb-3">
+                <label for="backlog-Details" class="form-label text-primary"
+                  >Details</label
+                >
+                <input
+                  type="text"
+                  class="form-control form-nk-2"
+                  id="backlog-Details"
+                  placeholder="Write about log..."
+                />
+              </div>
+              <div class="modal-footer">
+                <button class="btn btn-primary sub-1" type="button">Add</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+      <!-- modal to edit logs -->
+      <div
+        class="modal fade modal-2"
+        id="exampleModal-2"
+        tabindex="-1"
+        aria-labelledby="exampleModalLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h2 class="modal-title text-primary" id="exampleModalLabel">
+                Edit Task
+              </h2>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
             </div>
+            <form class="modal-body">
+              <div class="mb-3">
+                <label for="Backlog-Heading" class="form-label text-primary"
+                  >NewHeading</label
+                >
+                <input
+                  type="text"
+                  class="form-control my-backlog"
+                  id="Backlog-Heading"
+                  placeholder="Type a log..."
+                />
+              </div>
+              <div class="mb-3">
+                <label for="backlog-Details" class="form-label text-primary"
+                  >NewDetails</label
+                >
+                <input
+                  type="text"
+                  class="form-control my-about"
+                  id="backlog-Details"
+                  placeholder="Write about log..."
+                />
+              </div>
+              <div class="modal-footer">
+                <button class="btn btn-primary sub-2" type="button">Add</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <!-- Main kanban board -->
+      <div class="row flex-row flex-sm-nowrap py-3">
+        <div class="col-sm-4 col-md-4 col-xl-3">
+          <div class="card bg-light">
+            <div class="card-body">
+              <p class="h3 text-center text-primary">
+                Backlog
+                <button
+                  class="add btn btn-primary"
+                  data-bs-toggle="modal"
+                  data-bs-target="#exampleModal-1"
+                >
+                  +
+                </button>
+              </p>
+              <div class="backlog">
+                <div class="task col" data-index="1" draggable="true" id="0">
+                  <div class="backlog_head">
+                    <span class="headd">Heading:</span>
+                    <button
+                      type="button"
+                      class="edit_task btn btn-primary btn-md"
+                      data-bs-toggle="modal"
+                      data-bs-target="#exampleModal-2"
+                      id="0"
+                    >
+                      🖌️
+                    </button>
+                  </div>
+                  <div class="backlog_content">
+                    <span>Content content</span>
+                    <button type="button" class="delete_task btn btn-secondary">
+                      ❌
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-4 col-md-4 col-xl-3">
+          <div class="card bg-light">
+            <div class="card-body">
+              <p class="h3 text-center text-primary">To Do</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-4 col-md-4 col-xl-3">
+          <div class="card bg-light">
+            <div class="card-body">
+              <p class="h3 text-center text-primary">Review</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-4 col-md-4 col-xl-3">
+          <div class="card bg-light">
+            <div class="card-body">
+              <p class="h3 text-center text-primary">Done</p>
             </div>
           </div>
         </div>
       </div>
-      <div class="col-sm-4 col-md-4 col-xl-3">
-        <div class="card bg-light ">
-          <div class="card-body ">
-          <p class="h3 text-center text-primary">To Do</p>
-        </div>
-          </div>
-      </div>
-      <div class="col-sm-4 col-md-4 col-xl-3">
-        <div class="card bg-light">
-          <div class="card-body">
-          <p class="h3 text-center text-primary">Review</p>
-        </div>
-          </div>
-      </div>
-      <div class="col-sm-4 col-md-4 col-xl-3">
-        <div class="card bg-light">
-          <div class="card-body">
-          <p class="h3 text-center text-primary">Done</p>
-        </div>
-          </div>
-      </div>
-    </div>
-  </div>
-  </main>
-  <div class="overlay active"></div>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-  <script src="index.js"></script>
-</body>
-</html> 
-
-
+    </main>
+    <div class="overlay active"></div>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+    <script src="index.js"></script>
+  </body>
+</html>
